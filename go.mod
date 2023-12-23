@@ -1,4 +1,4 @@
-module github.com/juzeon/spoof-round-tripper
+module github.com/juzeon/spoofed-round-tripper
 
 go 1.20
 

@@ -1,4 +1,4 @@
-package spoof_round_tripper
+package srt
 
 import (
 	"fmt"
