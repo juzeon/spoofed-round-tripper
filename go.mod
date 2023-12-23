@@ -1,6 +1,6 @@
 module github.com/juzeon/spoof-round-tripper
 
-go 1.21
+go 1.20
 
 require (
 	github.com/bogdanfinn/fhttp v0.5.27
