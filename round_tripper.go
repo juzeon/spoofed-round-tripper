@@ -7,21 +7,21 @@ import (
 	"net/http"
 )
 
-type SpoofRoundTripper struct {
+type SpoofedRoundTripper struct {
 	Client tlsclient.HttpClient
 }
 
-func NewSpoofRoundTripper(httpClientOption ...tlsclient.HttpClientOption) (*SpoofRoundTripper, error) {
+func NewSpoofedRoundTripper(httpClientOption ...tlsclient.HttpClientOption) (*SpoofedRoundTripper, error) {
 	c, err := tlsclient.NewHttpClient(tlsclient.NewNoopLogger(), httpClientOption...)
 	if err != nil {
 		return nil, fmt.Errorf("error creating client: %w", err)
 	}
-	return &SpoofRoundTripper{
+	return &SpoofedRoundTripper{
 		Client: c,
 	}, nil
 }
 
-func (s SpoofRoundTripper) RoundTrip(hReq *http.Request) (*http.Response, error) {
+func (s SpoofedRoundTripper) RoundTrip(hReq *http.Request) (*http.Response, error) {
 	fReq, err := fhttp.NewRequest(hReq.Method, hReq.URL.String(), hReq.Body)
 	if err != nil {
 		return nil, err
