@@ -81,6 +81,10 @@ client := resty.New().SetTransport(tr)
 
 ```
 
+## Known Issues
+
+- Not supporting Websocket for now.
+
 ## Acknowledgement
 
 <https://github.com/bogdanfinn/tls-client/>
